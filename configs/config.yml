@@ -1,0 +1,32 @@
+# ----- MODEL -----
+model:
+  vocab: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+  d_model: 512
+  nhead: 8
+  num_layers: 4
+  dim_feedforward: 2048
+  dropout: 0.1
+
+# ----- DATASET -----
+data:
+  train_label: "data/train/labels.txt"
+  train_img_dir: "data/train/images/"
+
+  val_label: "data/val/labels.txt"
+  val_img_dir: "data/val/images/"
+
+  img_height: 32
+  img_width: 128
+
+# ----- TRAINING -----
+train:
+  batch_size: 16
+  num_workers: 2
+  lr: 0.0001
+  epochs: 50
+  print_every: 50
+
+# ----- CHECKPOINT -----
+checkpoint:
+  save_dir: "checkpoints/"
+  load_from: ""   # nếu muốn load model train dở: điền đường dẫn .pth vào
